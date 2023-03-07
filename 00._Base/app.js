@@ -1,14 +1,20 @@
 import express from "express";
 const app = express();
 
+import clickMe from "./util/documentation.js";
+clickMe();
 import path from "path";
 
 app.get("/", (req, res) => {
     res.sendFile(path.resolve("public/pages/frontpage/frontpage.html"))
 });
 
-app.get("/documentaion", (req, res) => {
+app.get("/documentation", (req, res) => {
     res.sendFile(path.resolve("public/pages/documentation/documentation.html"))
+});
+
+app.get("/documentation/:page", (req, res) => {
+    res.sendFile(path.resolve('public/pages/documentation/page' + req.params.page + '.html'))
 });
 
 const PORT = 8080;
