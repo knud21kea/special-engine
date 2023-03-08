@@ -9,8 +9,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("public/pages/frontpage/frontpage.html"))
 });
 
-app.get("/documentation", (req, res) => {
-    res.sendFile(path.resolve("public/pages/documentation/documentation.html"))
+app.get("/index", (req, res) => {
+    res.sendFile(path.resolve("public/pages/documentation/index.html"))
 });
 
 app.get("/documentation/:page", (req, res) => {
